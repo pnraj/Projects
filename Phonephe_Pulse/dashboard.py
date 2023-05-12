@@ -371,7 +371,7 @@ with bsb6:
 
 ### shape of the invidual districts
 
-url2 = 'https://github.com/pnraj/Projects/blob/master/Phonephe_Pulse/test.geojson'
+url2 = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/test.geojson'
 
 response1 = requests.get(url2)
 with open('test.geojson', 'wb') as file:
