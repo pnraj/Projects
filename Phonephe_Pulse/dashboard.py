@@ -229,7 +229,7 @@ atr1 = atr.groupby(['Year', 'TransactionMethod']).sum()
 df1a = atr1.reset_index().sort_values(by='TransactionCounts', ascending=False).reset_index(drop=True).drop(['Year', 'Quarter', 'TransactionAmounts'], axis=1)
 
 df1a = df1a.drop(3).append(df1a.loc[3]).reset_index().drop('index',axis=1)
-df1a['TransactionCounts'] = df1a['TransactionCounts'].apply(lambda x: formated(x))# this will be dataframe that inserted into
+df1a['TransactionCounts'] = df1a['TransactionCounts'].apply(lambda x: format_number(x))# this will be dataframe that inserted into
 df1a = df1a.reset_index(drop=True)
 df1a.index += 1
 
