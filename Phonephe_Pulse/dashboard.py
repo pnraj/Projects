@@ -155,7 +155,8 @@ gr_tr = filter_tr.groupby('Year').sum()
 All_transactions = gr_tr['TotalTransactionCount'].to_list()[0]
 Total_payments =gr_tr['TotalTransactionAmount'] #for formating
 Total_payments1 =gr_tr['TotalTransactionAmount'].to_list()[0]# ****All Transaction****
-atl = formated(All_transactions)
+reversed_numbers = ",".join(All_transactions.split(",")[::-1])
+atl = reversed_numbers
 Avg_Transaction = round(Total_payments1/All_transactions)# *** Averege transaction value
 av_form = '₹{:,}'.format(Avg_Transaction)
 # Set the locale to Indian English
