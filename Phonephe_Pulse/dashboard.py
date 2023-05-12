@@ -9,6 +9,7 @@ import json
 import wget
 import locale
 import warnings
+import requests
 warnings.filterwarnings("ignore")
 from db import users_df,trans_df,pin_df,pay_df
 #from files.db import data_fetch,queries
@@ -56,10 +57,13 @@ def formated(number):
     locale.setlocale(locale.LC_ALL, 'en_IN')
     formatted_number = locale.format_string("%d", number, grouping=True)
     return formatted_number
+url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/states_india.geojson'
 
-url = 'https://github.com/pnraj/Projects/blob/master/Phonephe_Pulse/states_india.geojson'
-geo_file = wget.download(url)
-india_states = gpd.read_file(geo_file)
+response = requests.get(url)
+with open('states_india.geojson', 'wb') as file:
+    file.write(response.content)
+
+india_states = gpd.read_file('states_india.geojson')
 # Creating id needed for map ++++++++++++++++++++
 df2 = india_states.copy()
 df2 = df2.rename(columns={'st_nm': 'state', 'state_code': 'id'})
