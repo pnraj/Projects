@@ -56,21 +56,15 @@ def formated(number):
     locale.setlocale(locale.LC_ALL, 'en_IN')
     formatted_number = locale.format_string("%d", number, grouping=True)
     return formatted_number
-def st_id():
-    url = 'https://github.com/pnraj/Projects/blob/master/Phonephe_Pulse/states_india.geojson'
-    geo_file = wget.download(url)
-    india_states = json.load(open(geo_file, "r"))
-    ## Processing the geojson files to get is of the each states to link with longitude and latitude
-    state_id_map = {}
-    for feature in india_states["features"]:
-        feature["id"] = feature["properties"]["state_code"]
-        state_id_map[feature["properties"]["st_nm"]] = feature["id"]
-    return state_id_map,india_states
+
+url = 'https://github.com/pnraj/Projects/blob/master/Phonephe_Pulse/states_india.geojson'
+geo_file = wget.download(url)
+india_states = gpd.read_file(geo_file)
 # Creating id needed for map ++++++++++++++++++++
-state_id_map,india_states = st_id()
-df = pd.DataFrame.from_dict(state_id_map, orient='index', columns=['id']).reset_index()
-df1 = df.rename(columns={'index': 'state'})
-gid = df1.sort_values(by='state').reset_index(drop=True)
+df2 = india_states.copy()
+df2 = df2.rename(columns={'st_nm': 'state', 'state_code': 'id'})
+df2 = df2[['id', 'state']]
+gid = df2.sort_values('state')
 tr_map = gid.copy()
 #++++++++++++++++++++++++++++++++++++
 # files are imported from the db.py file
