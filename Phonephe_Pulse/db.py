@@ -1,8 +1,11 @@
 import pandas as pd
 import sqlite3
 
+url = 'https://raw.githubusercontent.com/pnraj/Projects/master/Phonephe_Pulse/phonphe.db'
+db_file = wget.download(url)
+
 # Connect to the SQLite database
-conn = sqlite3.connect('phonphe.db')
+conn = sqlite3.connect(db_file)
 
 # Query the tables and retrieve the results
 users_query = "SELECT * FROM users;"
