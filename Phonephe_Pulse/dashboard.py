@@ -54,7 +54,7 @@ with c4:
 
 ### users map data get processed from here
 def formated(number):
-    locale.setlocale(locale.LC_ALL, 'en_IN')
+    locale.setlocale(locale.LC_ALL, 'en_US')
     formatted_number = locale.format_string("%d", number, grouping=True)
     return formatted_number
 url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/states_india.geojson'
