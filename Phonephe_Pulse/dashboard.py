@@ -159,8 +159,8 @@ atl = formated(All_transactions)
 Avg_Transaction = round(Total_payments1/All_transactions)# *** Averege transaction value
 av_form = '₹{:,}'.format(Avg_Transaction)
 # Set the locale to Indian English
-locale.setlocale(locale.LC_ALL, 'en_IN')
-sf1 = Total_payments.apply(lambda x: "₹" + locale.format_string("%.0f", x/1000000, grouping=True) + "Cr")
+sf1 = Total_payments.apply(lambda x: "₹" + "{:,.2f}".format(x/10000000) + "Cr")
+
 trvalue1 = sf1.to_list()[0] # ***Total payments 
 
 ## Users section values
