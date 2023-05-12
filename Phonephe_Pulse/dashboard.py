@@ -370,9 +370,14 @@ with bsb6:
         u_t2a = st.selectbox("", usty1a,key='u_t2',index=default_index2a)
 
 ### shape of the invidual districts
+
 url2 = 'https://github.com/pnraj/Projects/blob/master/Phonephe_Pulse/test.geojson'
-geo_file1 = wget.download(url2)
-india_states1 = gpd.read_file(geo_file1)
+
+response1 = requests.get(url2)
+with open('test.geojson', 'wb') as file:
+    file.write(response1.content)
+
+india_states1 = gpd.read_file('test.geojson')
 jk = india_states1.loc[india_states1['ST_NM'] == str(stnr), 'geometry']
 # Plot the selected area using Geopandas' plot function
 stfig, ax = plt.subplots(figsize=(90 / 10, 70 / 10))
