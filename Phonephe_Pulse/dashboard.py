@@ -120,10 +120,6 @@ map_df1[['id','StNames']] = tr_map[['id','state']]
 #map_df1['StNames'] = tr_map['state']
 fst = map_df1.copy()
 fst['id'] = fst['id'].astype(int)
-def formated(number):
-    locale.setlocale(locale.LC_ALL, 'en_IN')
-    formatted_number = locale.format_string("%d", number, grouping=True)
-    return formatted_number
 def mcrores(number):
     return '₹'+'{:,.0f} Cr'.format(round(number / 10000000))
 
