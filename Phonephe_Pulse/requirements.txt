@@ -4,3 +4,4 @@ pandas==1.5.3
 plotly==5.14.1
 streamlit>=1.20.0
 wget==3.2
+requests >=2.2
