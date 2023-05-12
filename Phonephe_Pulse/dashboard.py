@@ -54,7 +54,7 @@ with c4:
 
 ### users map data get processed from here
 def formated(number):
-    lnumber_str = str(number)
+    number_str = str(number)
     length = len(number_str)
     formatted_number = ""
     for i, digit in enumerate(number_str):
