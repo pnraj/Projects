@@ -1,5 +1,5 @@
 # This repo will based upon the Phonephe pulse data
-### The data from <repo> was cloned and ETL process was done through Airflow on docker and loaded on mysql database
+### The data from <repo> was cloned and ETL to mysql database
 ### Dashboard was created upon the mysql database with 
       - No of users on each states in India
       - Total no of users and total number of appopens upto 2018 - 2022
