@@ -55,7 +55,7 @@ def formated(number):
     formatted_number = locale.format_string("%d", number, grouping=True)
     return formatted_number
 def st_id():
-    india_states = json.load(open(r'C:\Users\HOME\Desktop\all\projects\guvi\Phonephe\myphone\states_india.geojson', "r"))
+    india_states = json.load(open('states_india.geojson', "r"))
     ## Processing the geojson files to get is of the each states to link with longitude and latitude
     state_id_map = {}
     for feature in india_states["features"]:
