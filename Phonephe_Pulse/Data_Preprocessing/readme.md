@@ -1,11 +1,13 @@
 ## This Directory Explains The Processing Of `Raw` Data Into `Structured` Data
-### Requirment for Processing the data
 
-1. __[Python 3](https://www.google.com/search?q=docs.python.org)__ 
+### Requirment for Data Processing `pip install r requirment.txt`
+
+1. __[Python 3.11](https://www.google.com/search?q=docs.python.org)__ 
 2. __[Pandas](https://www.google.com/search?q=python+pandas)__
 3. __[Mysql.connector](https://www.google.com/search?q=python+mysql+connector)__
-4. __[Os(python inbuilt)](https://www.google.com/search?q=python+os+lib)__
+4. __[Os(python inbuilt)](https://www.google.com/search?q=python+os)__
 5. __[Pathlib(python inbuilt)](https://www.google.com/search?q=python+pathlib)__
+6. __[Requests(optional)](https://www.google.com/search?q=python+requests)__
 
 ### How To Processes The Phonepe Github Data Using Files In This Directory
 
