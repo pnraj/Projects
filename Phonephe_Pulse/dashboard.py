@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import plotly.subplots as sp
 import plotly.graph_objects as go
 import json
-import wget
 import locale
 import warnings
 import requests
@@ -67,13 +66,16 @@ url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/states_india.
 response = requests.get(url)
 with open('states_india.geojson', 'wb') as file:
     file.write(response.content)
-
-india_states = gpd.read_file('states_india.geojson')
+india_states = json.load(open('states_india.geojson', "r"))
+#india_states = gpd.read_file('states_india.geojson')
+state_id_map = {}
+for feature in india_states["features"]:
+    feature["id"] = feature["properties"]["state_code"]
+    state_id_map[feature["properties"]["st_nm"]] = feature["id"]
 # Creating id needed for map ++++++++++++++++++++
-df2 = india_states.copy()
-df2 = df2.rename(columns={'st_nm': 'state', 'state_code': 'id'})
-df2 = df2[['id', 'state']]
-gid = df2.sort_values('state')
+df = pd.DataFrame.from_dict(state_id_map, orient='index', columns=['id']).reset_index()
+df1 = df.rename(columns={'index': 'state'})
+gid = df1.sort_values(by='state').reset_index(drop=True)
 tr_map = gid.copy()
 #++++++++++++++++++++++++++++++++++++
 # files are imported from the db.py file
