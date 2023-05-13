@@ -11,7 +11,7 @@ import warnings
 import requests
 warnings.filterwarnings("ignore")
 from db import users_df,trans_df,pin_df,pay_df
-#from files.db import data_fetch,queries
+#from data.db import data_fetch,queries ##use this line if your are importing from local database
 ## seting page config as wide
 st.set_page_config(layout='wide')
 ### Title columns
@@ -67,19 +67,16 @@ response = requests.get(url)
 with open('states_india.geojson', 'wb') as file:
     file.write(response.content)
 india_states = json.load(open('states_india.geojson', "r"))
+# processing the geojson file to refer in ploting(do not remove this section plot will not visible)
 state_id_map = {}
 for feature in india_states["features"]:
     feature["id"] = feature["properties"]["state_code"]
     state_id_map[feature["properties"]["st_nm"]] = feature["id"]
-# each state id from geojson file
-#map_id = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv'
-#response = requests.get(map_id)
-#with open('tr_map.csv', 'wb') as file:
-#    file.write(response.content)
+#______________________________________________________________________________
+# preprocessed geojson file for refercing the plot section ('state' & 'id') 
 tr_map = pd.read_csv('https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv')
 #++++++++++++++++++++++++++++++++++++
 # files are imported from the db.py file
-
 #users_df,trans_df,pin_df,pay_df = data_fetch(queries) 
 # users data
 ur_df = users_df.copy()
