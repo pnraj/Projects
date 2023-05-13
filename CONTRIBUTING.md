@@ -22,6 +22,6 @@ Thank you for considering contributing to this project! To ensure a smooth colla
 5. Wait for the project maintainers to review your PR and address any feedback.
 
 ## Contact
-If you have any questions or need further assistance, feel free to reach out to the project maintainer at [pnrajk@gmail.com](mailto:email@example.com).
+If you have any questions or need further assistance, feel free to reach out to the project maintainer at [pnrajk@gmail.com](mailto:pnrajk@gmail.com).
 
 We appreciate your contribution and look forward to your involvement in improving this project!
