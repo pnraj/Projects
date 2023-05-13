@@ -1,12 +1,11 @@
-## This Directory Explains The Processing Of `Raw` Data And Convert Into `Structured` Data
-
+## This Directory Explains The Processing Of `Raw` Data Into `Structured` Data
 ### Requirment for Processing the data
 
-1. Python==3.11
-2. Pandas>=3.7
-3. Mysql.connector
-4. Os(python inbuilt)
-5. Pathlib(python inbuilt)
+1. __[Python 3](https://www.google.com/search?q=docs.python.org)__ 
+2. __[Pandas](https://www.google.com/search?q=python+pandas)__
+3. __[Mysql.connector](https://www.google.com/search?q=python+mysql+connector)__
+4. __[Os(python inbuilt)](https://www.google.com/search?q=python+os+lib)__
+5. __[Pathlib(python inbuilt)](https://www.google.com/search?q=python+pathlib)__
 
 ### How To Processes The Phonepe Github Data Using Files In This Directory
 
@@ -81,3 +80,6 @@
             conn.close() #close database connection
 ```
 > For ease of use, I have created `Load.py` fully functional meaning, all you have to do is just run `Load.py` alone and python will take care of processing
+
+5.`db.py` is used to query your data from `mysql database` and convert them into `Pandas DataFrame`
+> can be replced with `db1.py` in main directory which is altered for publishing the dashboard in cloud
