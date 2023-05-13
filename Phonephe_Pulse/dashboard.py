@@ -62,7 +62,7 @@ def formated(number):
             formatted_number = "," + formatted_number
     return formatted_number
 # geojson file for full map
-url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/states_india.geojson'
+url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/data/states_india.geojson'
 response = requests.get(url)
 with open('states_india.geojson', 'wb') as file:
     file.write(response.content)
@@ -74,7 +74,7 @@ for feature in india_states["features"]:
     state_id_map[feature["properties"]["st_nm"]] = feature["id"]
 #______________________________________________________________________________
 # preprocessed geojson file for refercing the plot section ('state' & 'id') 
-tr_map = pd.read_csv('https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv')
+tr_map = pd.read_csv('https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/data/tr_map.csv')
 #++++++++++++++++++++++++++++++++++++
 # files are imported from the db.py file
 #users_df,trans_df,pin_df,pay_df = data_fetch(queries) 
@@ -366,7 +366,7 @@ with bsb6:
 
 ### shape of the invidual districts
 
-url2 = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/test.geojson'
+url2 = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/data/test.geojson'
 
 response1 = requests.get(url2)
 with open('test.geojson', 'wb') as file:
