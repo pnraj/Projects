@@ -170,7 +170,9 @@ trvalue1 = sf1.to_list()[0] # ***Total payments
 
 ## Users section values
 def format_number1(number):
-    return "{:,.0f}".format(number)
+    number_str = "{:,.0f}".format(number)
+    number_str = number_str.replace(",", "")
+    return number_str
 
 ur = users_df.copy()
 ur['AppOpening'] = ur['AppOpening'].astype(float)
