@@ -175,9 +175,9 @@ ur['AppOpening'] = ur['AppOpening'].astype(float)
 filter_ur = ur.loc[(ur['Year']==int(year)) & (ur['Quarter']==int(quarter))]
 gr_ur = filter_ur.groupby('Year').sum()
 Registered_users = gr_ur['UsersCount'].to_list()[0] #****Registered users****
-reg_usr = formated(Registered_users)
+reg_usr = format_number(Registered_users)
 App_opens = int(gr_ur['AppOpening'].to_list()[0]) #****App opens****
-app_on = formated(App_opens)
+app_on = format_number(App_opens)
 
 ## Top 10 values
 a = users_df.copy()
