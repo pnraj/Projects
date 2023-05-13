@@ -68,11 +68,11 @@ with open('states_india.geojson', 'wb') as file:
     file.write(response.content)
 india_states = json.load(open('states_india.geojson', "r"))
 # each state id from geojson file
-map_id = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv'
-response = requests.get(map_id)
-with open('tr_map.csv', 'wb') as file:
-    file.write(response.content)
-tr_map = pd.read_csv('tr_map.csv')
+#map_id = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv'
+#response = requests.get(map_id)
+#with open('tr_map.csv', 'wb') as file:
+#    file.write(response.content)
+tr_map = pd.read_csv('https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv')
 #++++++++++++++++++++++++++++++++++++
 # files are imported from the db.py file
 
