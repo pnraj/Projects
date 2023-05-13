@@ -67,6 +67,10 @@ response = requests.get(url)
 with open('states_india.geojson', 'wb') as file:
     file.write(response.content)
 india_states = json.load(open('states_india.geojson', "r"))
+state_id_map = {}
+for feature in india_states["features"]:
+    feature["id"] = feature["properties"]["state_code"]
+    state_id_map[feature["properties"]["st_nm"]] = feature["id"]
 # each state id from geojson file
 #map_id = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv'
 #response = requests.get(map_id)
