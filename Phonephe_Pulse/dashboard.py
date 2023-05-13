@@ -61,22 +61,18 @@ def formated(number):
         if (length - i) % 2 == 0 and i != length - 1:
             formatted_number = "," + formatted_number
     return formatted_number
+# geojson file for full map
 url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/states_india.geojson'
-
 response = requests.get(url)
 with open('states_india.geojson', 'wb') as file:
     file.write(response.content)
 india_states = json.load(open('states_india.geojson', "r"))
-#india_states = gpd.read_file('states_india.geojson')
-state_id_map = {}
-for feature in india_states["features"]:
-    feature["id"] = feature["properties"]["state_code"]
-    state_id_map[feature["properties"]["st_nm"]] = feature["id"]
-# Creating id needed for map ++++++++++++++++++++
-df = pd.DataFrame.from_dict(state_id_map, orient='index', columns=['id']).reset_index()
-df1 = df.rename(columns={'index': 'state'})
-gid = df1.sort_values(by='state').reset_index(drop=True)
-tr_map = gid.copy()
+# each state id from geojson file
+map_id = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/tr_map.csv'
+response = requests.get(map_id)
+with open('tr_map.csv', 'wb') as file:
+    file.write(response.content)
+tr_map = pd.read_csv('tr_map.csv')
 #++++++++++++++++++++++++++++++++++++
 # files are imported from the db.py file
 
