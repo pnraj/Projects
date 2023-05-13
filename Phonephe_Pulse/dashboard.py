@@ -169,15 +169,17 @@ sf1 = Total_payments.apply(lambda x: "₹" + "{:,.0f}".format(x/10000000) + "Cr"
 trvalue1 = sf1.to_list()[0] # ***Total payments 
 
 ## Users section values
+def format_number1(number):
+    return "{:,.0f}".format(number)
 
 ur = users_df.copy()
 ur['AppOpening'] = ur['AppOpening'].astype(float)
 filter_ur = ur.loc[(ur['Year']==int(year)) & (ur['Quarter']==int(quarter))]
 gr_ur = filter_ur.groupby('Year').sum()
 Registered_users = gr_ur['UsersCount'].to_list()[0] #****Registered users****
-reg_usr = format_number(Registered_users)
+reg_usr = format_number1(Registered_users)
 App_opens = int(gr_ur['AppOpening'].to_list()[0]) #****App opens****
-app_on = format_number(App_opens)
+app_on = format_number1(App_opens)
 
 ## Top 10 values
 a = users_df.copy()
