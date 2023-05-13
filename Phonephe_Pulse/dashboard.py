@@ -10,7 +10,7 @@ import locale
 import warnings
 import requests
 warnings.filterwarnings("ignore")
-from db import users_df,trans_df,pin_df,pay_df
+from data.db import users_df,trans_df,pin_df,pay_df
 #from data.db import data_fetch,queries ##use this line if your are importing from local database
 ## seting page config as wide
 st.set_page_config(layout='wide')
