@@ -1,9 +1,11 @@
-# This repo will based upon the Phonephe pulse data
-### The data from <repo> was cloned and ETL to mysql database
-### Dashboard was created upon the mysql database with 
-      - No of users on each states in India
-      - Total no of users and total number of appopens upto 2018 - 2022
-      - Number of transaction on each region 
-<a href="https://pnraj-projects-phonephe-pulsedashboard-y5wmx8.streamlit.app/" target="_blank">For Live View Click here</a>
+#  <a href="https://pnraj-projects-phonephe-pulsedashboard-y5wmx8.streamlit.app/" target="_blank"> PhonePe Pulse Data Analysis 2018-2022 Dashboard </a>
+
+
+### The Files in the repo and How they are used in this app
+      
+- `dashboard.py` is the Phonepe dashboard app, run this app after git clone this repo and `pip install -r requirements.txt`
+      
+- `db.py` is the `sqlite3` file mainly used to query the data from `phonepe.db` file and convert them into pandas dataframe
+   
 
 
