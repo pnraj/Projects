@@ -171,7 +171,7 @@ atl = format_number(reversed_number)
 Avg_Transaction = round(Total_payments1/All_transactions)# *** Averege transaction value
 av_form = '₹{:,}'.format(Avg_Transaction)
 # Set the locale to Indian English
-sf1 = Total_payments.apply(lambda x: "₹" + "{:,.2f}".format(x/10000000) + "Cr")
+sf1 = Total_payments.apply(lambda x: "₹" + "{:,.0f}".format(x/10000000) + "Cr")
 
 trvalue1 = sf1.to_list()[0] # ***Total payments 
 
