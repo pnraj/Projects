@@ -238,7 +238,6 @@ with s1:
         
     # transaction map
     else:
-        st.dataframe(fst)
         st.plotly_chart(fig1, config=dict({'displayModeBar': False}, **{'displaylogo': False}), use_container_width=False)
         
 with s2:
