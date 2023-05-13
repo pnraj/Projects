@@ -159,7 +159,7 @@ reversed_numbers = [segment[:] for segment in str(All_transactions).split(",")]
 reversed_number = ",".join(reversed_numbers)
 def format_number(number):
     return "{:,}".format(x)
-atl = format_number(reversed_number)
+atl = format_number(All_transactions)
 #atl = "{:,}".format(All_transactions)
 Avg_Transaction = round(Total_payments1/All_transactions)# *** Averege transaction value
 av_form = '₹{:,}'.format(Avg_Transaction)
