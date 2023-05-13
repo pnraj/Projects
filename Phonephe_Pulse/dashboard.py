@@ -168,7 +168,7 @@ def format_number(number):
             formatted_number = "," + formatted_number
     return formatted_number
 #atl = format_number(reversed_number)
-atl = All_transactions
+atl = All_transactions.apply(lambda x: "{:,.0f}".format(x/10000000))
 Avg_Transaction = round(Total_payments1/All_transactions)# *** Averege transaction value
 av_form = '₹{:,}'.format(Avg_Transaction)
 # Set the locale to Indian English
