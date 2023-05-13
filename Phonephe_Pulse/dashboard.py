@@ -158,17 +158,9 @@ Total_payments1 =gr_tr['TotalTransactionAmount'].to_list()[0]# ****All Transacti
 reversed_numbers = [segment[:] for segment in str(All_transactions).split(",")]
 reversed_number = ",".join(reversed_numbers)
 def format_number(number):
-    number_str = str(number)
-    formatted_number = ""
-    count = 0
-    for i in range(len(number_str) - 1, -1, -1):
-        formatted_number = number_str[i] + formatted_number
-        count += 1
-        if count % 2 == 0 and i != 0:
-            formatted_number = "," + formatted_number
-    return formatted_number
-#atl = format_number(reversed_number)
-atl = "{:,}".format(All_transactions)
+    return "{:,}".format(x)
+atl = format_number(reversed_number)
+#atl = "{:,}".format(All_transactions)
 Avg_Transaction = round(Total_payments1/All_transactions)# *** Averege transaction value
 av_form = '₹{:,}'.format(Avg_Transaction)
 # Set the locale to Indian English
