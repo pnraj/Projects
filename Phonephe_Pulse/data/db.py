@@ -2,7 +2,7 @@ import pandas as pd
 import sqlite3
 import wget
 
-url = 'https://raw.githubusercontent.com/pnraj/Projects/master/Phonephe_Pulse/phonphe.db'
+url = 'https://raw.githubusercontent.com/pnraj/Projects/master/Phonephe_Pulse/data/phonphe.db'
 db_file = wget.download(url)
 
 # Connect to the SQLite database
