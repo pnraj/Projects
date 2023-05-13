@@ -173,7 +173,7 @@ av_form = '₹{:,}'.format(Avg_Transaction)
 # Set the locale to Indian English
 sf1 = Total_payments.apply(lambda x: "₹" + "{:,.2f}".format(x/10000000) + "Cr")
 
-trvalue1 = int(sf1.to_list()[0]) # ***Total payments 
+trvalue1 = sf1.to_list()[0] # ***Total payments 
 
 ## Users section values
 
