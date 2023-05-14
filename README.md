@@ -17,12 +17,12 @@ The world of data engineering is an exciting and rapidly evolving field that foc
 To get started with the materials in this repository, follow the instructions below:
 
 1. Clone the repository to your local machine using the command:
-`git clone https://github.com/your-username/project-repo.git`
+`git clone https://github.com:pnraj/Projects.git`
 
 2. Install the necessary dependencies by running:
 `pip install -r requirements.txt`
 
-3. Set up your development environment by following the guidelines provided in the documentation.
+3. Set up your development environment by following the guidelines provided in the README.md in each Directory.
 
 ## Usage
 This repository encompasses various data engineering concepts and technologies. Each directory within the repository represents a specific topic or tool, providing code examples, tutorials, and guidelines.
@@ -38,4 +38,4 @@ Contributions to this project are welcome! If you would like to contribute, plea
 This project is licensed under the [MIT License](LICENSE). Please review the license file for more details.
 
 ## Contact
-If you have any questions or suggestions regarding this project, feel free to reach out to the project maintainer at [pnrajk@gmail.com](mailto:pnrajk@gmail.com).
+If you have any questions or suggestions regarding this project, feel free to reach out to me at [pnrajk@gmail.com](mailto:pnrajk@gmail.com).
