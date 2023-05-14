@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 import plotly.subplots as sp
 import plotly.graph_objects as go
 import json
-import locale
 import warnings
 import requests
 warnings.filterwarnings("ignore")
