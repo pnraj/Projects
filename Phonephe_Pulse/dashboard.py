@@ -7,8 +7,6 @@ import plotly.subplots as sp
 import plotly.graph_objects as go
 import json
 import warnings
-import locale
-locale.setlocale(locale.LC_ALL, '')
 import requests
 warnings.filterwarnings("ignore")
 from data.db import users_df,trans_df,pin_df,pay_df
@@ -57,10 +55,13 @@ def formated(number):
     number_str = str(number)
     length = len(number_str)
     formatted_number = ""
-    for i in range(length-1, -1, -1):
-        if (length - i) % 3 == 0 and i != 0:
-            formatted_number = "," + formatted_number
+    comma_counter = 0
+    for i in range(length - 1, -1, -1):
         formatted_number = number_str[i] + formatted_number
+        comma_counter += 1
+        if comma_counter == 2 and i != 0:
+            formatted_number = "," + formatted_number
+            comma_counter = 0
     return formatted_number
 # geojson file for full map
 url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/data/states_india.geojson'
