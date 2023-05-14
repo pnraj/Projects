@@ -62,6 +62,9 @@ def formated(number):
         if comma_counter == 2 and i != 0:
             formatted_number = "," + formatted_number
             comma_counter = 0
+        elif comma_counter == 3 and i != 0:
+            formatted_number = "," + formatted_number
+            comma_counter = 0
     return formatted_number
 # geojson file for full map
 url = 'https://github.com/pnraj/Projects/raw/master/Phonephe_Pulse/data/states_india.geojson'
