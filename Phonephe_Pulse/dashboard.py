@@ -61,6 +61,7 @@ def formated(number):
         comma_counter += 1
         if comma_counter == 2 and i != 0:
             formatted_number = "," + formatted_number
+            comma_counter = 0
         elif comma_counter == 3 and i != 0:
             formatted_number = "," + formatted_number
             comma_counter = 0
