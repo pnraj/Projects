@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import json
 import warnings
 import locale
-locale.setlocale(locale.LC_ALL, 'en_IN.utf8')
+locale.setlocale(locale.LC_ALL, '')
 import requests
 warnings.filterwarnings("ignore")
 from data.db import users_df,trans_df,pin_df,pay_df
