@@ -86,4 +86,4 @@
 5.`db.py` is used to query your data from `mysql database` and convert them into `Pandas DataFrame`
 #### ER-Diagram : Fact and Dimensional Tables:
 ![PhonePe DB](https://github.com/pnraj/Projects/assets/29162796/2e6395d3-a7d0-4ccc-ae5f-4961d0280f89)
-> can be replced with `db1.py` in main directory which is altered for publishing the dashboard in cloud
+> can be replced with `Phonephe_Pulse/data/db.py` in main directory which is altered for publishing the dashboard in cloud
