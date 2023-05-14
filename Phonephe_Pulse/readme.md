@@ -1,5 +1,7 @@
 #  <a href="https://pnraj-projects-phonephe-pulsedashboard-y5wmx8.streamlit.app/" target="_blank"> PhonePe Pulse Data Analysis 2018-2022 Dashboard </a>
-
+## General workflow of this Project:
+![PhonePe Design](https://github.com/pnraj/Projects/assets/29162796/b97ce7b9-634a-4612-bef7-77369b4a89c6)
+## Dashboard Preview
 ![phonegif1](https://github.com/pnraj/Projects/assets/29162796/d183e86b-4d47-4b3a-906f-bb20ea3de9a6)
 ### The Files in the repo and How they are used in this app
       
