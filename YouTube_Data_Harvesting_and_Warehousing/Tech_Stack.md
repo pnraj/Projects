@@ -1,19 +1,18 @@
-# Tech Stack:
+# <div align="center">`All Reference And Links Used In This Repo`</div>
 
-## Streamlit
+## YouTube API:
 
-## Python
+## Python:
 
-## SQL(MySQL)
+## SQL(MySQL):
 
-## NOSQL(MongoDB)
+## NOSQL(MongoDB):
 
-## AWS
+## AWS:
   
   - RDS
   - Lambda
   - MongoDB Atlas
-  - 
     
-
+## Streamlit
       
