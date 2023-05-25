@@ -13,7 +13,7 @@ st.set_page_config(layout='wide')
 
 def mdb_insert(keyword,channel_Data,video_Data,comments_data):
     from pymongo import MongoClient
-    client = MongoClient("mongodb+srv://youtubeapi:06june2023@cluster0.usghofp.mongodb.net/?retryWrites=true&w=majority")
+    client = MongoClient(st.scretes["mongoapi"])
     db = client['youtube']
     collection_names = db.list_collection_names()
 
@@ -37,11 +37,11 @@ def mdb_insert(keyword,channel_Data,video_Data,comments_data):
 
 
 
-#@st.cache_data
+
 def mdb_queries_data(coll_name):
     
     from pymongo import MongoClient
-    client = MongoClient("mongodb+srv://youtubeapi:06june2023@cluster0.usghofp.mongodb.net/?retryWrites=true&w=majority")
+    client = MongoClient(st.scretes["mongoapi"])
     db = client['youtube']
     collection = db[f'{coll_name}']
     ch_doc = collection.find_one({"_id":f"{coll_name}-Channel"})
@@ -65,14 +65,6 @@ def get_data(col_name):
             "vid_data": vi_doc,
             "comm_data": com_doc
         }
-
-
-
-
-
-
-
-
 
 
 
@@ -113,14 +105,14 @@ else:
         vi_data = None
         com_data = None
 
-        #chl_data,vi_data,com_data = mdb_queries_data(new_collection_name)
-        #st.write(chl_data)
+        
+        
         bcol,bcol1,bcol2 = st.columns([2,0.1,7])
         with bcol:
             st.markdown('<br>', unsafe_allow_html=True) 
             st.markdown('<br>', unsafe_allow_html=True)
             get_data(col_name) # this were button to upload to mongodb 
-            # upload to mysql button comes here 
+            
                 
 
         with bcol2:
@@ -182,8 +174,8 @@ else:
         vi_data = None
         com_data = None
 
-        #chl_data,vi_data,com_data = mdb_queries_data(new_collection_name)
-        #st.write(chl_data)
+        
+       
         bcol,bcol1,bcol2 = st.columns([2,0.1,7])
         with bcol:
             st.markdown('<br>', unsafe_allow_html=True) 
