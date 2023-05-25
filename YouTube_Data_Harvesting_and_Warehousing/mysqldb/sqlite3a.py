@@ -6,7 +6,12 @@ import requests
 def mysql_insert(channel_df, video_df, comment_df):
     # Connect to the SQLite database
     url = "https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db"
-    db_file = wget.download(url)
+    db_file = "YouTubeApi.db"
+    
+    response = requests.get(url)
+    
+    with open(db_file, 'wb') as f:
+        f.write(response.content)
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
 
