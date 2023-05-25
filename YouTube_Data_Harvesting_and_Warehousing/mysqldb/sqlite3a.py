@@ -128,8 +128,6 @@ def mysql_single_query(chn_name):
     # needed to isolate ch_id from chl that are selected
     if not ch_df.empty:
         ch_id_qu = ch_df['Channel_Id'].to_list()[0]
-    else:
-        ch_id_qu = 
     # needed to select based upon the ch_id_qu
     
     vi_qu = f"SELECT a.Video_Id,a.Video_Title,a.Uploaded_Date,a.Total_Views,a.Total_Likes,a.Total_Comments FROM Videos_Table a JOIN Channel_Table b ON a.Channel_Id = b.Ch_id WHERE b.Channel_Id = '{ch_id_qu}'"
