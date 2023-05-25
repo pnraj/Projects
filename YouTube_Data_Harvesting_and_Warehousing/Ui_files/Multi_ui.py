@@ -179,7 +179,7 @@ def multi_ui_channel(channel_df,video_df,comment_df1,channel_data,vid_data,comm_
 
 def sql_textbox():
 
-    conn = sqlite3.connect('YouTubeApi.db')
+    conn = sqlite3.connect('https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db')
     cursor = conn.cursor()
     # Text input widget for SQL query
     query = st.text_area('Enter SQL query', key='query-input', height=300)
