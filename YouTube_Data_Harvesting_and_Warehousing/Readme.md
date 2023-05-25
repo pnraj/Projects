@@ -7,7 +7,7 @@
    
    - Ability to input a _**YouTube channel ID**_ and retrieve all the relevant data using _**Google API**_.
   
-        __| Channel name | Subscribers | Total video count | Playlist ID | Video ID | Likes| Dislikes | Comments of each video | Right column |__
+        __| Channel name | Subscribers | Total video count | Playlist ID | Video ID | Likes| Comments of each video |__
      
    - Option to store the data in a MongoDB database as a data lake.
    - Ability to collect data for up to 10 different YouTube channels and store them in the data lake by clicking a button.
