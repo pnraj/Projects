@@ -32,7 +32,7 @@ def Channel_data(all_id):
         
     
     return ch_ti1
-
+# video id 
 def get_video_ids(playlist_id):
     API_KEY = 'AIzaSyCH53t5KoEdr9JCkjQao84lHrDPmpF1oR4'
     youtube = build('youtube', 'v3', developerKey=API_KEY)
