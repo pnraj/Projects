@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-
+import wget
 
 def format_number(n):
     if n < 1000:
