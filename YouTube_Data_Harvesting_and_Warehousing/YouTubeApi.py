@@ -242,7 +242,7 @@ else:
                 if db_qur == True:
                     tab_ui1(qu_ch_df,qu_vi_df,qu_com_df) # imported from Single_ui.py
                 else:
-                    st.write(" #### Press the Button On Your Left side To Query The Data From Mysql DataBase After Uploading The Data!!!")
+                    st.write(" ###### Press the Button On Your Left side To Query The Data From Mysql DataBase After Uploading The Data!!!")
         
         with qtab1:
 
