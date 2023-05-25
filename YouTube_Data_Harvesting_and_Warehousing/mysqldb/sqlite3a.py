@@ -1,10 +1,13 @@
 import sqlite3
 import pandas as pd
+import wget
 
 
 def mysql_insert(channel_df, video_df, comment_df):
     # Connect to the SQLite database
-    conn = sqlite3.connect("https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db")
+    url = "https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db"
+    db_file = wget.download(url)
+    conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
 
     ch_schema = """
@@ -89,7 +92,9 @@ def mysql_insert(channel_df, video_df, comment_df):
 # Mysql query
 
 def mysql_query(chn_name):
-    conn = sqlite3.connect("https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db")
+    url = "https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db"
+    db_file = wget.download(url)
+    conn = sqlite3.connect(db_file)
     ch_str = "', '".join(chn_name)
     
     cu_q = f"SELECT * FROM Channel_Table WHERE CHANNEL_NAME IN ('{ch_str}')"
@@ -108,7 +113,9 @@ def mysql_query(chn_name):
     return ch_df,vi_df,com_df
 
 def mysql_single_query(chn_name):
-    conn = sqlite3.connect("https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db")
+    url = "https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db"
+    db_file = wget.download(url)
+    conn = sqlite3.connect(db_file)
     #ch_str = "', '".join(chn_name)
     
     cu_q = f"SELECT * FROM Channel_Table WHERE CHANNEL_NAME IN ('{chn_name}')"
