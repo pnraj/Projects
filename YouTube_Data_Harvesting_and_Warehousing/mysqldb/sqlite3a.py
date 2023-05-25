@@ -109,7 +109,7 @@ def mysql_query(chn_name):
     
     vi_df = pd.read_sql(vi_qu,conn)
     com_df = pd.read_sql(co_qu,conn)
-    
+    conn.close()
     return ch_df,vi_df,com_df
 
 def mysql_single_query(chn_name):
@@ -131,5 +131,6 @@ def mysql_single_query(chn_name):
     
     vi_df = pd.read_sql(vi_qu,conn)
     com_df = pd.read_sql(co_qu,conn)
+    conn.close()
     
     return ch_df,vi_df,com_df
