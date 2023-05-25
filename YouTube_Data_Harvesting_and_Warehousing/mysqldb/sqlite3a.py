@@ -1,7 +1,7 @@
 import sqlite3
 import pandas as pd
 import wget
-
+import requests
 
 def mysql_insert(channel_df, video_df, comment_df):
     # Connect to the SQLite database
@@ -114,7 +114,12 @@ def mysql_query(chn_name):
 
 def mysql_single_query(chn_name):
     url = "https://raw.githubusercontent.com/pnraj/Projects/master/YouTube_Data_Harvesting_and_Warehousing/mysqldb/YouTubeApi.db"
-    db_file = wget.download(url)
+    db_file = "YouTubeApi.db"
+    
+    response = requests.get(url)
+    
+    with open(db_file, 'wb') as f:
+        f.write(response.content)
     conn = sqlite3.connect(db_file)
     #ch_str = "', '".join(chn_name)
     
@@ -123,6 +128,8 @@ def mysql_single_query(chn_name):
     # needed to isolate ch_id from chl that are selected
     if not ch_df.empty:
         ch_id_qu = ch_df['Channel_Id'].to_list()[0]
+    else:
+        ch_id_qu = 
     # needed to select based upon the ch_id_qu
     
     vi_qu = f"SELECT a.Video_Id,a.Video_Title,a.Uploaded_Date,a.Total_Views,a.Total_Likes,a.Total_Comments FROM Videos_Table a JOIN Channel_Table b ON a.Channel_Id = b.Ch_id WHERE b.Channel_Id = '{ch_id_qu}'"
