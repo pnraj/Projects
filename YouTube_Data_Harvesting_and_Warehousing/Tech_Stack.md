@@ -6,13 +6,8 @@
 
 ## SQL(MySQL):
 
-## NOSQL(MongoDB):
+## NOSQL(MongoDB Atlas):
 
-## AWS:
-  
-  - RDS
-  - Lambda
-  - MongoDB Atlas
     
 ## Streamlit
       
