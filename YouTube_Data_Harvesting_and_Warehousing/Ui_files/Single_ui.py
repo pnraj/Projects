@@ -166,20 +166,14 @@ def tab_ui1(channel_df,video_df,comment_df1):
     tab1,tab2,tab3 = st.tabs(['Channel table','Videos Table','Comments Table'])
     with tab1:
         with st.expander("Channel Tables"):
-            chl_slot = st.empty()
-            if channel_df:
-                channel_df.set_index('Channel_Name')
-                chl_slot.dataframe(channel_df)
+            channel_df.set_index('Channel_Name')
+            st.dataframe(channel_df)
     with tab2:
         with st.expander(" Video Tables"):
-            vid_slt = st.empty()
-            if video_df:
-                vid_slt.dataframe(video_df)
+            st.dataframe(video_df)
         
     with tab3:
         with st.expander("Comments Tables"):
-            com_slt = st.empty()
-            if comment_df1:
-                com_slt.dataframe(comment_df1)
+            st.dataframe(comment_df1)
 
         
