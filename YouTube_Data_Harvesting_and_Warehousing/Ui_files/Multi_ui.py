@@ -199,6 +199,7 @@ def sql_textbox():
             st.error(f'Error executing SQL query: {str(e)}')
 
     # Close the database connection
+    conn.commit()
     conn.close()
 
     
