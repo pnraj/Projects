@@ -13,7 +13,7 @@ st.set_page_config(layout='wide')
 
 def mdb_insert(keyword,channel_Data,video_Data,comments_data):
     from pymongo import MongoClient
-    client = MongoClient(st.scretes["mongoapi"])
+    client = MongoClient(st.secrets["mongoapi"])
     db = client['youtube']
     collection_names = db.list_collection_names()
 
@@ -41,7 +41,7 @@ def mdb_insert(keyword,channel_Data,video_Data,comments_data):
 def mdb_queries_data(coll_name):
     
     from pymongo import MongoClient
-    client = MongoClient(st.scretes["mongoapi"])
+    client = MongoClient(st.secrets["mongoapi"])
     db = client['youtube']
     collection = db[f'{coll_name}']
     ch_doc = collection.find_one({"_id":f"{coll_name}-Channel"})
