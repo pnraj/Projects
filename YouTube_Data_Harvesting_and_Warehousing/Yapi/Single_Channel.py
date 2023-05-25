@@ -160,9 +160,11 @@ def chn_id_get(channel_link):
             channel_id = channel_id_match.group(1)
         channel_data = Channel_data(channel_id)    
        
-    else:
+    elif "/UC" in channel_link:
         channel_id = channel_link.split('/')[-1]
         channel_data = Channel_data(channel_id)
+    else:
+        st.write(" #### Please Enter Correct Url Of the YouTube Channel")
     
     return channel_data,channel_id
 
