@@ -9,7 +9,7 @@ from googleapiclient.errors import HttpError
 
 #channel_id_extract(channel_link)
 def Channel_data(all_id):
-    API_KEY = 'AIzaSyCH53t5KoEdr9JCkjQao84lHrDPmpF1oR4'
+    API_KEY = 'AIzaSyAXoC29qwkPhZUralbjrdGNvBRXGRURKeU'
     youtube = build('youtube', 'v3', developerKey=API_KEY)
     
     cha_res = youtube.channels().list(
@@ -34,7 +34,7 @@ def Channel_data(all_id):
     return ch_ti1
 # video id 
 def get_video_ids(playlist_id):
-    API_KEY = 'AIzaSyCH53t5KoEdr9JCkjQao84lHrDPmpF1oR4'
+    API_KEY = 'AIzaSyAXoC29qwkPhZUralbjrdGNvBRXGRURKeU'
     youtube = build('youtube', 'v3', developerKey=API_KEY)
 
     video_ids = []
@@ -64,7 +64,7 @@ def get_video_ids(playlist_id):
 
 ## new version of get_video_details
 def get_video_details(video_ids):
-    API_KEY = 'AIzaSyCH53t5KoEdr9JCkjQao84lHrDPmpF1oR4'
+    API_KEY = 'AIzaSyAXoC29qwkPhZUralbjrdGNvBRXGRURKeU'
     youtube = build('youtube', 'v3', developerKey=API_KEY)
     #video_ids = video_ids[:100]
     all_video_stats = []
@@ -96,7 +96,7 @@ def get_video_details(video_ids):
     return all_video_stats
 
 def comment_data(vid_lis):
-    API_KEY = 'AIzaSyCH53t5KoEdr9JCkjQao84lHrDPmpF1oR4'
+    API_KEY = 'AIzaSyAXoC29qwkPhZUralbjrdGNvBRXGRURKeU'
     youtube = build('youtube', 'v3', developerKey=API_KEY)
         
     comments = []
