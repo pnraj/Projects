@@ -34,7 +34,10 @@
    - Wait For App To Make _API Request_ To **YouTube** And _Fetch Data_
    - Same As Single Channel Mode But it Have Additional Options of **Selecting Channel Names** For uploading To _Mysql DataBase_
  
- ![ytapi](https://github.com/pnraj/Projects/assets/29162796/72ee83a0-501d-4fae-b474-bd42fb49e101)
+ <p align="center">
+  <img src="https://github.com/pnraj/Projects/assets/29162796/72ee83a0-501d-4fae-b474-bd42fb49e101" alt="Project WorkFlow">
+ </p>
+ 
  ## Basic Requirements:
 
 - __[Python 3.11](https://www.google.com/search?q=docs.python.org)__
@@ -60,12 +63,12 @@
     
   - Api call Gets Data in _JSON_ Format with lots of Details in each catagories:[Youtube Docs](https://developers.google.com/youtube/v3/docs/)
   
-                ``` 
+  ``` py
                     1. Channels
                     2. Videos 
                     3. CommentThreads
                     4. Search and many more
-                 ```
+  ```
   - Data get Formated and Made Ready for Users to Upload to MongoDB which is **_Data Lake_** 
   - In MongoDB Each users Data is Stored in DB Called `youtube` and Collections name is Created based upon on the users Channel search
   - Sample of Data are shown to Users in **_Streamlit_** App After Succesfull Insert of Data into _[MongoDB Atlas](https://mongodb.com/)_
@@ -73,6 +76,12 @@
 3.__Uploading To Mysql DataBase:__
 
    - Data From MongoDB are then Converted into Tables and Rows using __Pandas__ with Normalization of Values are ready to Upload to MysqlDB
-   - 
+   - **_Mysql Connector_** is used for Connecting App and MysqlDB 
+   - In Multiple Channel Mode Users Have Options of Choosing Channels That Needs to Be Uploaded to MysqlDB
+
+4.__Querying From Mysql DataBase:__
+
+   - Querying Data From MysqlDB Have Two Options With **_Pre-Defined Query_** and **_Custom Query_**
+   - **_Pre-Defined Query_** will display details of the Selected Channels in 
 
 
