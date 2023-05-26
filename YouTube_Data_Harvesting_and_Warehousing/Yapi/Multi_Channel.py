@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import pandas as pd
 
 def Channel_data(ch_list):
-    API_KEY = st.secrets['apikey1']
+    API_KEY = st.secrets["apikey1"]
     youtube = build('youtube', 'v3', developerKey=API_KEY)
     all_id = ','.join(ch_list)
     cha_res = youtube.channels().list(
@@ -36,7 +36,7 @@ def ch_playlist(ch_id):
     return playlist_id
 
 def get_video_ids(playid):
-    API_KEY = st.secrets['apikey2']
+    API_KEY = st.secrets["apikey2"]
     youtube = build('youtube', 'v3', developerKey=API_KEY)
 
     video_ids = []
@@ -65,7 +65,7 @@ def get_video_ids(playid):
 
 ## new version of get_video_details
 def get_video_details(video_ids):
-    API_KEY = st.secrets['apikey3']
+    API_KEY = st.secrets["apikey3"]
     youtube = build('youtube', 'v3', developerKey=API_KEY)
     
     all_video_stats = []
@@ -98,7 +98,7 @@ def get_video_details(video_ids):
 
 ## Search function
 def first_search(keyword):
-    API_KEY = st.secrets['apikey1']
+    API_KEY = st.secrets["apikey1"]
     youtube = build('youtube', 'v3', developerKey=API_KEY)
     search_response = youtube.search().list(
                     q=keyword,
@@ -117,7 +117,7 @@ def first_search(keyword):
 
 
 def comment_data(vid_lis):
-    API_KEY = st.secrets['apikey4']
+    API_KEY = st.secrets["apikey4"]
     youtube = build('youtube', 'v3', developerKey=API_KEY)
     comments = []
     for vids in vid_lis:
