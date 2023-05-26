@@ -27,11 +27,11 @@ def display_app_instructions():
     col1, col2,col3 = st.columns([6,3,3.5])
 
     # GitHub link
-    github_link = "#### :orange[GitHub Link]: [Click Here](https://github.com/pnraj)"
+    github_link = "#### :orange[GitHub Link]: [Project Repo](https://github.com/pnraj/Projects/tree/master/YouTube_Data_Harvesting_and_Warehousing)"
     col1.markdown(github_link)
 
     # LinkedIn link
-    linkedin_link = "#### :orange[LinkedIn Link]: [Click Here](https://www.linkedin.com/in/nataraj-palanivel-057085144/)"
+    linkedin_link = "#### :orange[LinkedIn Link]: [Contact Me](https://www.linkedin.com/in/nataraj-palanivel-057085144/)"
     col3.markdown(linkedin_link)
 
     # Describe the app's modes and instructions
