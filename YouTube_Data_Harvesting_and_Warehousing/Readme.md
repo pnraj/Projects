@@ -15,7 +15,9 @@
    - Ability to search and retrieve data from the SQL database using different search options, including joining tables to get channel details.
 
 ## How To Use The App: _[Click Here to Use Live App](https://pnraj-youtube-data-harvesting-and-warehousingyoutubeapi-9xleb8.streamlit.app/)_
-## Here comes Gif of App 
+<p align="center">
+  <img src="https://github.com/pnraj/Projects/assets/29162796/d90cf91e-1467-4fec-a7ab-5fdfad55f4c3" alt="YouTube API APP">
+ </p>
 1.__Single Channel Mode:__
 
   - Copy Your Desired YouTube Channel link 
@@ -34,10 +36,6 @@
    - Wait For App To Make _API Request_ To **YouTube** And _Fetch Data_
    - Same As Single Channel Mode But it Have Additional Options of **Selecting Channel Names** For uploading To _Mysql DataBase_
  
- <p align="center">
-  <img src="https://github.com/pnraj/Projects/assets/29162796/72ee83a0-501d-4fae-b474-bd42fb49e101" alt="Project WorkFlow">
- </p>
- 
  ## Basic Requirements:
 
 - __[Python 3.11](https://www.google.com/search?q=docs.python.org)__
@@ -48,6 +46,11 @@
 - __[Numpy](https://www.google.com/search?q=numpy)__ 
 - __[pymongo](https://www.google.com/search?q=pymongo)__
 - __[requests](https://www.google.com/search?q=requests)__
+
+
+<p align="center">
+  <img src="https://github.com/pnraj/Projects/assets/29162796/72ee83a0-501d-4fae-b474-bd42fb49e101" alt="Project WorkFlow">
+ </p>
 
 ## General BackEnd WorkFlow Of This Project:
 1.__Api Call And Data Sorting:__
@@ -69,6 +72,26 @@
                     3. CommentThreads
                     4. Search and many more
   ```
+  ##### MongoDB Data Sample
+  ``` json
+  
+                      {
+           "_id":"ExamPro-Channel",
+           "Channels_Data":[
+              {
+                 "Channel_id":"UC2EsmbKnDNE7y1N3nZYCuGw",
+                 "Channel_Name":"ExamPro",
+                 "Playlist_id":"UU2EsmbKnDNE7y1N3nZYCuGw",
+                 "Created_Date":"2018-10-15T00:48:34Z",
+                 "Subcribers":"27200",
+                 "TotalViews":"3088251",
+                 "TotalVideos":"2754",
+                 "Thumbnail":"https://yt3.ggpht.com/Cp5qTPY5Riz_MkI-WgSShDIfddjKlO7NYpWu-uYABE7ghCHFuF2LGAPRovaJ8DNGxswIkWGv1Q=s240-c-k-c0x00ffffff-no-rj",
+                 "Channel_link":"https://www.youtube.com/channel/UC2EsmbKnDNE7y1N3nZYCuGw"
+              }
+           ]
+        }
+  ```
   - Data get Formated and Made Ready for Users to Upload to MongoDB which is **_Data Lake_** 
   - In MongoDB Each users Data is Stored in DB Called `youtube` and Collections name is Created based upon on the users Channel search
   - Sample of Data are shown to Users in **_Streamlit_** App After Succesfull Insert of Data into _[MongoDB Atlas](https://mongodb.com/)_
@@ -78,10 +101,61 @@
    - Data From MongoDB are then Converted into Tables and Rows using __Pandas__ with Normalization of Values are ready to Upload to MysqlDB
    - **_Mysql Connector_** is used for Connecting App and MysqlDB 
    - In Multiple Channel Mode Users Have Options of Choosing Channels That Needs to Be Uploaded to MysqlDB
+   - MysqlDB will have Three Tables **_Channel_Table, Videos_Table, Comments_Table_** 
+   
+   ``` sql
+           
+        CREATE TABLE IF NOT EXISTS Channel_Table (
+            Ch_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Channel_Id VARCHAR(30) UNIQUE,
+            Channel_Name VARCHAR(40),
+            Playlist_Id VARCHAR(30),
+            Created_Date DATETIME,
+            Subscribers BIGINT,
+            Total_Views BIGINT,
+            Total_Videos BIGINT);
+     
+        CREATE TABLE IF NOT EXISTS Videos_Table (
+            Vid_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Channel_Id INTEGER,
+            Video_Id VARCHAR(20),
+            Video_Title VARCHAR(100),
+            Uploaded_Date DATETIME,
+            Total_Views BIGINT,
+            Total_Likes BIGINT,
+            Total_Comments BIGINT,
+            FOREIGN KEY (Channel_Id) REFERENCES Channel_Table (Ch_id));
+    
+        CREATE TABLE IF NOT EXISTS Comments_Table (
+            Com_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            Channel_Id INTEGER,
+            Video_Id INTEGER,
+            Video_Title VARCHAR(100),
+            Comments VARCHAR(200),
+            Replies VARCHAR(200),
+            FOREIGN KEY (Channel_Id) REFERENCES Channel_Table (Ch_id),
+            FOREIGN KEY (Video_Id) REFERENCES Videos_Table (Vid_id));
+   ```
+   
+   
+   
+   
+   <p align="center">
+  <img src="https://github.com/pnraj/Projects/assets/29162796/4be53ef8-3089-468d-af69-1a201c9c5220" alt="MysqlDB Schema">
+ </p>
+  
+
 
 4.__Querying From Mysql DataBase:__
 
    - Querying Data From MysqlDB Have Two Options With **_Pre-Defined Query_** and **_Custom Query_**
-   - **_Pre-Defined Query_** will display details of the Selected Channels in 
+   - **_Pre-Defined Query_** will display details of the Selected Channels or Channels that are currentely Shown in Channels List 
+   - **_Custom Query_** will have options to use **_SQL_** Queries to get Details of all Channels, Videos, Comments Using all basic _SQL_ Commends like **_JOIN,WHERE,SELECT,GROUP BY, HAVING_**  
 
+``` sql
 
+        SELECT a.Channel_Name,b.Video_Title,b.Total_Likes 
+            FROM Channel_Table  a JOIN Videos_Table b ON 
+                a.Ch_id = b.Channel_Id WHERE b.Total_Likes > 20;
+
+```
