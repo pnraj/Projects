@@ -31,7 +31,7 @@ def display_app_instructions():
     col1.markdown(github_link)
 
     # LinkedIn link
-    linkedin_link = "#### :orange[LinkedIn Link]: [Contact Me](https://www.linkedin.com/in/nataraj-palanivel-057085144/)"
+    linkedin_link = "#### :orange[Contact Me]: [@LinkedIn](https://www.linkedin.com/in/nataraj-palanivel-057085144/)"
     col3.markdown(linkedin_link)
 
     # Describe the app's modes and instructions
