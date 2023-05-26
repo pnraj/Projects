@@ -40,7 +40,7 @@ def display_app_instructions():
     # Single Mode description
     single_mode_title = "###### :one: Single Mode "
     single_mode_description = (" - Please copy the **URL** of your desired **YouTube channel** and paste it in the text box." 
-    "For example: `https://www.youtube.com/@andreaskayy`" 
+    "For example: `__https://www.youtube.com/@andreaskayy__`" 
     " - This mode will fetch the latest **100 videos** and details of their **comments and replyies**(up to 30 comments per video)."  
     " - It usually takes less than **one minute**.")
 
