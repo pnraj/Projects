@@ -72,7 +72,12 @@
                     3. CommentThreads
                     4. Search and many more
   ```
-  ##### MongoDB Data Sample
+  
+  - Data get Formated and Made Ready for Users to Upload to MongoDB which is **_Data Lake_** 
+  - In MongoDB Each users Data is Stored in DB Called `youtube` and Collections name is Created based upon on the users Channel search
+  - Sample of Data are shown to Users in **_Streamlit_** App After Succesfull Insert of Data into _[MongoDB Atlas](https://mongodb.com/)_
+
+##### MongoDB Data Sample
   ``` json
   
                       {
@@ -92,9 +97,9 @@
            ]
         }
   ```
-  - Data get Formated and Made Ready for Users to Upload to MongoDB which is **_Data Lake_** 
-  - In MongoDB Each users Data is Stored in DB Called `youtube` and Collections name is Created based upon on the users Channel search
-  - Sample of Data are shown to Users in **_Streamlit_** App After Succesfull Insert of Data into _[MongoDB Atlas](https://mongodb.com/)_
+
+
+
 
 3.__Uploading To Mysql DataBase:__
 
