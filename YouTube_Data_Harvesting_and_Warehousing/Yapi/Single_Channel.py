@@ -33,7 +33,7 @@ def Channel_data(all_id):
     return ch_ti1
 # video id 
 def get_video_ids(playlist_id):
-    API_KEY = "AIzaSyDk0gizym3ocFH4x43XbdwYY298Bhf4v6o"
+    API_KEY = "AIzaSyDldORJbO8akDKDJ9XGFvmzoqTCiCbpgTo"
     youtube = build('youtube', 'v3', developerKey=API_KEY)
 
     video_ids = []
@@ -63,7 +63,7 @@ def get_video_ids(playlist_id):
 
 ## new version of get_video_details
 def get_video_details(video_ids):
-    API_KEY = "AIzaSyDBN68Vdn87CdDfIecaghFoNcm98lwEHJY"
+    API_KEY = "AIzaSyDldORJbO8akDKDJ9XGFvmzoqTCiCbpgTo"
     youtube = build('youtube', 'v3', developerKey=API_KEY)
     #video_ids = video_ids[:100]
     all_video_stats = []
@@ -95,7 +95,7 @@ def get_video_details(video_ids):
     return all_video_stats
 
 def comment_data(vid_lis):
-    API_KEY = "AIzaSyA_WncRE29BlDt8-MP6Eb0fmb7T35GoUqY"
+    API_KEY = "AIzaSyDldORJbO8akDKDJ9XGFvmzoqTCiCbpgTo"
     youtube = build('youtube', 'v3', developerKey=API_KEY)
         
     comments = []
