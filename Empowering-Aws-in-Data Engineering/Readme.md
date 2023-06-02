@@ -3,7 +3,7 @@
 
 This repository contains a collection of projects that demonstrate how to use AWS services for data engineering. The projects cover a variety of topics, including:
 
-* Data warehousing
+* S3 - A Versatile Storage
 * Data lakes
 * Data pipelines
 * Data analysis
