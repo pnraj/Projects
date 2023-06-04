@@ -65,6 +65,7 @@
  </p>
  
 List the S3 bucket:
+	
 	aws s3 ls
 
 Create bucket:
@@ -97,8 +98,8 @@ List of Objects in s3:
 
 Sync the folder with S3:
 
-	aws s3 sync . s3://your-bucket-name/ 	  	# this for files in current directory 
-	aws s3 sync <file path> s3://your-bucket-name/ 	# this for mentioning path to folder that needed to sync
+	aws s3 sync . s3://your-bucket-name/ 	  	# for files in current directory 
+	aws s3 sync <file path> s3://your-bucket-name/ 	# for mentioning path to folder that needed to sync
 
 Temp webfile:
 
