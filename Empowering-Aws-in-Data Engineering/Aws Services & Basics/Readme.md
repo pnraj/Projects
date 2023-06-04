@@ -1,4 +1,4 @@
-### A Data Engineer Who is focused on AWS Services, Most Data Pipelines on store and process large volumes of data, and perform analytics, Uses these Servises
+### A Data Engineer Who is focused on _`AWS Services`_, Most ETL Data Pipelines on `EXTRACT, TRANSFORM & LOAD` large volumes of data, and perform analytics, Uses these Servises
 
 
 1. __Amazon S3 (Simple Storage Service):__ Object storage service for storing and retrieving large amounts of data.
