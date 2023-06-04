@@ -1,4 +1,7 @@
 # Features & Usecase of _`AWS S3`:_[Offcial Docs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+<p align="center">
+  <img src="https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto/v1649770076/hevo-learn/Untitled-5-1.png?_i=AA" alt="AWS S3 Logo">
+ </p>
 ## AWS S3:
 - Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. 
 - Customers of all sizes and industries can use Amazon S3 to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics. 
