@@ -50,12 +50,126 @@
      ```
     [`Bucket Policy Samples`](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html)
 ## Accessing AWS S3:
+
 **AWS Management Console:**
-- The console is a web-based user interface for managing Amazon S3 and AWS resources. 
+- The console is a web-based user interface for managing Amazon S3 and AWS resources.
+<p align="center">
+  <img src="https://github.com/pnraj/Projects/assets/29162796/1d32379b-8f3b-4592-8578-01a71c988677" alt="S3 Console">
+ </p>
+
+**AWS Command Line Interface:**
+
+- You can use the AWS command line tools to issue commands or build scripts at your system's command line to perform AWS (including S3) tasks.
+<p align="center">
+  <img src="https://github.com/pnraj/Projects/assets/29162796/3cda8557-d243-46c4-873b-28f4e3251dae" alt="AWS CMD">
+ </p>
+ 
+List the S3 bucket:
+	aws s3 ls
+
+Create bucket:
+	
+	aws s3 mb s3://your-bucket-name/ --region <use your region>
+
+Create folder and upload a file:
+
+	aws s3 cp file.txt s3://bucket-name/foldername/
+
+Copy Complete folder into s3:
+
+	aws s3 cp foldername/ s3://bucket-name/foldername/ --recursive   # if folder in working directory
+
+Remove bucket:
+	
+	aws s3 rb foldername/ s3://bucket-name/foldername/
+
+Move object in bucket: 
+	
+	aws s3 mv foldername/ s3://bucket-name/foldername/
+
+Upload Object into s3:
+
+	aws s3 cp myfile.txt s3://your-bucket-name/
+
+List of Objects in s3:
+
+	aws s3 ls s3://your-bucket-name/
+
+Sync the folder with S3:
+
+	aws s3 sync . s3://your-bucket-name/ 	  	# this for files in current directory 
+	aws s3 sync <file path> s3://your-bucket-name/ 	# this for mentioning path to folder that needed to sync
+
+Temp webfile:
+
+	aws s3 presign s3://mybucket/myobject --expires-in 3600
+
+Static Webfile:
+
+	aws s3 website s3://your-bucket-name/ --index-document index.html
+	aws s3 sync your-local-folder s3://your-bucket-name
+	aws s3api get-bucket-website --bucket your-bucket-name
+
+## AWS SDKs: 
+
+- AWS provides SDKs ([software development kits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html)) that consist of libraries and sample code for various programming languages and platforms 
+- **_Java, Python, Ruby, .NET, iOS, Android_** etc..
+- In order to use AWS SDKs we have to create **_aws_access_key_id_ & _aws_secret_access_key_**
+
+  **List Buckets In S3:**
+  
+  ``` py
+    # Python Based Lib boto3
+    import boto3 
+    s3 = boto3.client('s3')
+    response = s3.list_buckets()
+
+    # Output the bucket names
+    print('Existing buckets:')
+    for bucket in response['Buckets']:
+        print(f'  {bucket["Name"]}')
+  ```    
+  
+  **Creating Bucket Using Boto3:**
+  
+  ``` py
+  import boto3
+  from botocore.exceptions import ClientError
+  import os
+  # defining function for creating a bucket
+  def create_bucket(api_key,api_secret,bucketName, region=None):
+    # if region is not entered bucket will create on default region (us-east-1)
+    # try and exception for error handaling
+    try:
+      s3 = boto3.resource('s3', aws_access_key_id = api_key, aws_secret_access_key=api_secret)
+      if region is None:
+          s3.create_bucket(Bucket=bucketName)
+      else:
+          location = {'LocationConstraint': region}
+          s3.create_bucket(Bucket=bucketName,
+                                  CreateBucketConfiguration=location)
+    except ClientError as e:
+        return str(e)
+    return "Succesfully Created"
+    ```
+    
+    **Upload into s3:**
+    
+    ``` py
+    
+      def upload_to_bucket(api_key,api_secret,bucketName,file_path):
+        try:
+          s3 = boto3.resource('s3', aws_access_key_id = api_key, aws_secret_access_key=api_secret)
+          key = os.path.basename(file_path)  # Specify the desired key (filename) in the bucket
+          # Upload the file
+          s3.Object(bucketName, key).upload_file(file_path)
+
+        except ClientError as e:
+          return str(e)
+        return "Succefully Uploaded"
+        
+    ```
+    
 
 
 
-
-
-
-There are Four Ways We Can Create A Bucket in S3:
