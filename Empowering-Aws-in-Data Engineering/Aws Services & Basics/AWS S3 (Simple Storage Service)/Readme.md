@@ -173,7 +173,13 @@ Static Webfile:
         return "Succefully Uploaded"
         
     ```
-    
+## [Google Collab NootBook Link](https://colab.research.google.com/drive/1F1i_2Y9S5vLaywWTjyVQaToBInTnZ-Rd?usp=sharing)
+
+## Aws S3 Free Tier:
+<p align="center">
+  <img src="https://github.com/pnraj/Projects/assets/29162796/bbfc1a0f-ba07-45ba-ad0e-e2f953485ba3" alt="Free Tier">
+ </p>
+ 
 
 
 
