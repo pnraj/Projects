@@ -1,4 +1,4 @@
-### The Data Engineering Using _`AWS Services`_ On `EXTRACT | TRANSFORM | LOAD`In Data Pipelines with 5V's of Data:
+### The Data Engineering Using _`AWS Services`_ In Data Pipelines with 5V's of Data:
 
 
 1. __AWS S3 (Simple Storage Service):__ Object storage service for storing and retrieving large amounts of data.
