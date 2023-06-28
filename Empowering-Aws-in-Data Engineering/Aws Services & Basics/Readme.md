@@ -5,7 +5,7 @@
 2. __AWS Redshift:__ Fully managed data warehousing service for analytics and reporting. It is optimized for online analytical processing (OLAP) workloads.
 3. __AWS Athena:__ Interactive query service that allows you to analyze data stored in Amazon S3 using standard SQL queries.
 4. __AWS Lambda:__ Serverless compute service that allows you to run your code without provisioning or managing servers. It can be used to build serverless ETL pipelines.
-5. __AWS Event Bridge:__ Used to trigger an event based on the services that need to be triggered in a sequential manner and for scheduling.
+5. __AWS RDS:__ Aws Managed RDBMS with auto-scalling enabled(optional) - Mysql, Postgresql, Aurora, MS-Sql, Oracel
 6. __AWS Data Pipeline:__ Orchestration service that allows you to schedule and automate the movement and transformation of data between different AWS services and on-premises data sources.
 7. __AWS Glue:__ Fully managed extract, transform, and load (ETL) service that makes it easy to prepare and load data for analytics.
 8. __AWS Glue DataBrew:__ Visual data preparation tool that helps you clean and normalize data for analytics.
