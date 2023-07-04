@@ -6,10 +6,11 @@
 <h3>Requirments:</h3>
 
 - Python<=3.10
+- `Apache Spark 3`
 - boto3
 - requests
-- DataBricks Account (Minimum community Edition)
-- AWS Account with Admin Access(S3 & RDS)
+- _**DataBricks**_ Account (minimum community Edition) and basics about _**Pyspark**_
+- Basics about _**AWS services**_ and to Create `S3 bucket` & `RDS mysql instance`
 
 <h3> Problem Statement:</h3>
 
