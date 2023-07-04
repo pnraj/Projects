@@ -1,0 +1,41 @@
+{
+    "Comment": "Invoke Lambda every 15 seconds",
+    "StartAt": "ConfigureCount",
+    "States": {
+        "ConfigureCount": {
+            "Type": "Pass",
+            "Result": {
+                "index": 0,
+                "count": 4
+            },
+            "ResultPath": "$.iterator",
+            "Next": "Iterator"
+        },
+        "Iterator": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:REGION:ACCOUNT_ID:function:Iterator",
+            "ResultPath": "$.iterator",
+            "Next": "IsCountReached"
+        },
+        "IsCountReached": {
+            "Type": "Choice",
+            "Choices": [
+                {
+                    "Variable": "$.iterator.continue",
+                    "BooleanEquals": true,
+                    "Next": "Wait"
+                }
+            ],
+            "Default": "Done"
+        },
+        "Wait": {
+            "Type": "Wait",
+            "Seconds": 15,
+            "Next": "Iterator"
+        },
+        "Done": {
+            "Type": "Pass",
+            "End": true
+        }
+    }
+}
