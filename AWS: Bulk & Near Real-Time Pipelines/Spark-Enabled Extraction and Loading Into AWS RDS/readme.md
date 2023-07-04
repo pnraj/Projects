@@ -1,6 +1,7 @@
-### Bulk Processing of SEC.gov data using DataBricks(Apache Spark) and AWS Cluster(Community Edition):-
+<div align="center"> <h1> SPARK-ENABLED EXTRACTION AND LOADING INTO AWS RDS </h1> </div>
 
-1. Bulk data processing emphasizes the efficiency and optimization of operations that deal with significant amounts of data in a unified manner. 
-<p align="center">
-  <img src="https://github.com/pnraj/Projects/assets/29162796/981040cb-1b59-4ccf-afe2-6110d4620ac6" alt="Project WorkFlow">
- </p>
+<h3> Problem Statement:</h3>
+
+1. To extract the data from [SEC.gov]("https://www.sec.gov/edgar/sec-api-documentation") (Zip) and stored in PySpark DataFrame. Each row in DataFrame will represent Each JSON file in the Zip and store the DataFrame into AWS S3 as Json file using Boto3
+2. Get the File From AWS S3 using Boto3 and Transform the Data Suitable for AWS RDS Mysql Instance.
+
