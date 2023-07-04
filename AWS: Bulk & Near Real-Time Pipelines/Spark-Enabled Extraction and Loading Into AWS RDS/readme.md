@@ -101,7 +101,7 @@
 ```
 
 4. Data can be Transformed into Three Tables and inserted into  AWS RDS<table schema >
-<p align="center">
+<p>
     <img src="https://github.com/pnraj/Projects/assets/29162796/ee88ed74-dce4-4ebd-af78-f461b091aec5" alt="Table Schema" width="990" height="550">
 </p>
 
@@ -155,4 +155,27 @@
     foreign key (Company_index) references Company_Table (Company_index)
     );
 ```
+
+<h5>Load Into AWS RDS Using Pyspark write method and JDBC Connection(Parallelism support)</h5>
+
+```py
+    def sparkToRds(df,sample_table,jdbc_url,connection_properties):
+      try:
+          # Write the DataFrame to a temporary table in the MySQL database
+          df.write \
+              .format("jdbc") \
+              .option("url", jdbc_url) \
+              .option("dbtable", f"{sample_table}") \
+              .option("user", connection_properties["user"]) \
+              .option("password", connection_properties["password"]) \
+              .mode("append") \
+              .save()
+  
+          # If the code reaches this point without raising an exception, the connection is successful
+          print(f"successfully Inserted Into AWS RDS SEC DATABASE: {sample_table}.")
+  
+      except Exception as e:
+          print(f"Connection failed: {str(e)}")
+```
+
 
