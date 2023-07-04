@@ -11,21 +11,19 @@ from contact_df import contacts_df, contact_table
 from form_df import sec_fillings_df, form_table
 
 #
-def GetS3Data(api_key,api_secret,s3_key,s3_bucket_name,s3_Zip_Path):
-    # Initialize the S3 resource
-    s3_resource = boto3.resource('s3', aws_access_key_id = api_key, aws_secret_access_key = api_secret)
-
-    # Download the file from S3
-    s3_resource.Object(s3_bucket_name, s3_key).download_file(s3_Zip_Path)
-
-    print("File downloaded successfully from S3.")
-
-def UnzipS3Data(unzip_dir,s3_Zip_Path):
+def GetS3Data(api_key,api_secret,s3_key,s3_bucket_name,s3_Zip_Path,unzip_dir):
     try:
+        # Initialize the S3 resource
+        s3_resource = boto3.resource('s3', aws_access_key_id = api_key, aws_secret_access_key = api_secret)
+        # Download the file from S3
+        s3_resource.Object(s3_bucket_name, s3_key).download_file(s3_Zip_Path)
+        print("File downloaded successfully from S3.")
         subprocess.check_call(f"unzip {s3_Zip_Path} -d {unzip_dir}", shell=True)
         print("Unzipped successfully!")
-    except subprocess.CalledProcessError as e:
-        print(f"Unzip Error: {e.returncode}")
+
+    except Exception as e:
+        print(f"Unzip Error: {e}")        
+
 
 def JsonToDataFrame(unzip_dir):
     # spark should be created using SparkSession 
@@ -40,8 +38,7 @@ def JsonToDataFrame(unzip_dir):
 
 def df_main(api_key,api_secret,s3_key,s3_bucket_name,s3_Zip_Path,unzip_dir):
     #Execution Starts here
-    GetS3Data(api_key,api_secret,s3_key,s3_bucket_name,s3_Zip_Path)
-    UnzipS3Data(unzip_dir,s3_Zip_Path)
+    GetS3Data(api_key,api_secret,s3_key,s3_bucket_name,s3_Zip_Path,unzip_dir)
     jdf = JsonToDataFrame(unzip_dir)
     #Company_table
     com_df, company_table = Company_table(jdf)
