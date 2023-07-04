@@ -159,9 +159,16 @@
 <h5>Load Into AWS RDS Using Pyspark write method and JDBC Connection(Parallelism support)</h5>
 
 ```py
+    def jdbc_conn(host, user, password, dbname): 
+      jdbc_url = f"jdbc:mysql://{host}:3306/{dbname}"
+      connection_properties = {"user": f"{user}", "password": f"{password}"}
+      return jdbc_url, connection_properties
+```
+
+```py
     def sparkToRds(df,sample_table,jdbc_url,connection_properties):
       try:
-          # Write the DataFrame to a temporary table in the MySQL database
+          # Write the DataFrame to a table in the MySQL database
           df.write \
               .format("jdbc") \
               .option("url", jdbc_url) \
@@ -171,11 +178,11 @@
               .mode("append") \
               .save()
   
-          # If the code reaches this point without raising an exception, the connection is successful
           print(f"successfully Inserted Into AWS RDS SEC DATABASE: {sample_table}.")
   
       except Exception as e:
           print(f"Connection failed: {str(e)}")
 ```
+
 
 
