@@ -13,7 +13,7 @@
   <img src="https://github.com/pnraj/Projects/assets/29162796/f6e07a28-dce6-4fb2-8795-ddb8f46b16b8" alt="Project WorkFlow" width="830" height="550">
  </p>
 
-3. [**`Near real-time processing`**](https://github.com/pnraj/Projects/tree/master/AWS%3A%20Bulk%20%26%20Near%20Real-Time%20Pipelines/API%20TO%20RDS%20USING%20LAMBDA%20WITH%20SLACK%20ERROR%20MONITORING) is a type of data processing that resembles real-time processing, but with a slight delay of usually a few seconds before the data is processed. In the context of this project, the data is processed at regular intervals of _**15 seconds**_, which qualifies it as near real-time processing.
+3. [**`Near Real-Time Processing`**](https://github.com/pnraj/Projects/tree/master/AWS%3A%20Bulk%20%26%20Near%20Real-Time%20Pipelines/API%20TO%20RDS%20USING%20LAMBDA%20WITH%20SLACK%20ERROR%20MONITORING) is a type of data processing that resembles real-time processing, but with a slight delay of few seconds before the data is processed. In the context of this project, the data is processed at regular intervals of _**15 seconds**_, so it called `Near Real-Time Processing`.
 
 <p align="center">
   <img src="https://github.com/pnraj/Projects/assets/29162796/fe89c91f-a1ab-46e9-b589-4e9ef1bafa5a" alt="Project WorkFlow" width="830" height="550">
