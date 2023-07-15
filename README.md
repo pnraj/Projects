@@ -1,7 +1,7 @@
 # Data Engineering Projects:
 
 ## Project Description
-This repository serves as a comprehensive collection of resources and code for the aspiring data engineer. It aims to provide a solid foundation and practical guidance for individuals interested in pursuing a career in the field of data engineering.
+This repository Contains collection of resources and code for the aspiring data engineer. It aims to provide a solid foundation and practical guidance for individuals interested in pursuing a career in the field of data engineering.
 
 <h3 align="left">PROJECTS</h3>
 
